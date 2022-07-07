@@ -14,7 +14,9 @@ export default function () {
     const saveData = async (evt) => {
         evt.preventDefault()
 
-        if (modalFormCourse.dataToForm.id) {
+        const id = modalFormCourse?.dataToForm?.id || null
+
+        if (id) {
             await ProfessorAllocationService.EditCourse({
                 _id: modalFormCourse.dataToForm.id,
                 name: nameInput.current.value
@@ -25,13 +27,13 @@ export default function () {
             })
         }
 
-        closeModal()
+        nameInput.current.value = ""    
 
         const { data } = await ProfessorAllocationService.GetCourses()
 
-        nameInput.current.value = ""
-    
         dispatch(setCoursesState(data))
+
+        closeModal()
 
     }
 
