@@ -145,3 +145,9 @@ dialog{
 .bg-purple{
   background-color: 	#5865f2;
 }
+
+.link{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}

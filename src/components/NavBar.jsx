@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 export default function () {
     return (
         <div className="navbar dp-flex space-between shawdow-bottom al-center">
@@ -5,17 +8,17 @@ export default function () {
                 Professor Allocation
             </div>
             <div className="dp-flex">
-                <div className="pa-10px item-hover border-radius">
-                    Professores
+                <div className="pa-10px item-hover border-radius link">
+                    <Link to="/professores" className="link">Professores</Link>
                 </div>
                 <div className="pa-10px item-hover border-radius">
-                    Cursos
+                    <Link to="/cursos" className="link">Cursos</Link>
                 </div>
                 <div className="pa-10px item-hover border-radius">
-                    Departamentos
+                    <Link to="/departamentos" className="link">Departamentos</Link>
                 </div>
                 <div className="pa-10px item-hover border-radius">
-                    Alocações
+                    <Link to="/alocacoes" className="link">Alocações</Link>
                 </div>
             </div>
         </div>

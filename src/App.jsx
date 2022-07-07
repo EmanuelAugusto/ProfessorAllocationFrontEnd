@@ -1,12 +1,12 @@
 import './App.css'
 import NavBar from './components/NavBar'
-import Course from './modules/course/Course'
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <main>
-      <NavBar/>
-      <Course/>
+      <NavBar />
+      <Outlet />
     </main>
   )
 }
