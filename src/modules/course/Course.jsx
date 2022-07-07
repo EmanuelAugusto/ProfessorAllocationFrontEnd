@@ -59,7 +59,7 @@ export default function () {
                     return (<CourseAllocationCard key={keyB} {...al} />)
                 })}
                 slotafter={<> <div className="mb-10px">
-                    <Button label="Editar" className="bg-purple" onClick={() => openForm(cs.id)} />
+                    <Button label="Editar" className="bg-purple mr-05px" onClick={() => openForm(cs.id)} />
                     <Button label="Apagar" className="bg-red" onClick={() => deleteCourse(cs.id)} />
                 </div></>}
                 key={key} classCustom="mb-05px" />)}

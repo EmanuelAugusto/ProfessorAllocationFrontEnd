@@ -40,8 +40,9 @@ export default function () {
     }
 
     useEffect(() => {
-        nameInput.current.value = modalFormCourse.dataToForm.name
-        console.log(modalFormCourse);
+        if(modalFormCourse._id){
+            nameInput.current.value = modalFormCourse.dataToForm.name
+        }
     }, [])
 
     return (
