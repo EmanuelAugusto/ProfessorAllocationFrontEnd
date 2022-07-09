@@ -140,3 +140,13 @@ export const DeleteProfessorById = async (body) => {
         ...body
     })
 }
+
+
+export const GetAllocations = async (params) => {
+    return await ProfessorHttp.get("allocations")
+}
+
+
+export const SaveAllocation = async (params) => {
+    return await ProfessorHttp.post("allocations", { ...params })
+}
