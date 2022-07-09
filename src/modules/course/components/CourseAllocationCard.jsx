@@ -1,7 +1,7 @@
 import DaysParse from "../../../utils/DaysParse"
 import HoursParse from "../../../utils/HoursParse"
 
-export default function ({ day, start, end, teacher: { name } }) {
+export default function ({ day, start, end, teacher: { name }, course: { name: nameCourse } }) {
     return (
         <div className="border pa-10px border-radius  item-color">
             <p>
@@ -15,6 +15,9 @@ export default function ({ day, start, end, teacher: { name } }) {
             </p>
             <p>
                 Nome do professor: {name}
+            </p>
+            <p>
+                Curso: {nameCourse}
             </p>
         </div>
     )
