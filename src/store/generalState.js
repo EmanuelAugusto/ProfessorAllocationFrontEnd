@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const GeneralSlice = createSlice({
     name: 'General',
     initialState: {
-        loading: true
+        loading: false
     },
     reducers: {
         setLoadingState: (state, action) => {
