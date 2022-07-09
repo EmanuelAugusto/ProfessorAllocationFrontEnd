@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import * as ProfessorAllocationService from "../../../services/ProfessorAllocationService"
 import { stateModalFormCourse, setCoursesState } from '../courseState/CourseState'
+import Toast from "../../../utils/Toast"
 
 export default function () {
 
@@ -28,6 +29,14 @@ export default function () {
         }
 
         nameInput.current.value = ""
+
+
+        Toast({
+            message: "Sucesso ao criar curso",
+            color: "success",
+            time: 2000,
+            show: true
+        })
 
         const { data } = await ProfessorAllocationService.GetCourses()
 

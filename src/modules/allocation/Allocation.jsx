@@ -8,6 +8,7 @@ import { setProfessorsState } from '../professor/ProfessorsState/ProfessorsState
 import { setCoursesState } from '../course/courseState/CourseState'
 import CourseAllocationCard from "../course/components/CourseAllocationCard"
 import FormCreateAllocation from "./components/FormCreateAllocation"
+import Toast from "../../utils/Toast"
 
 export default function () {
     const allocation = useSelector(state => state.allocation.allocation)
@@ -37,6 +38,13 @@ export default function () {
             await ProfessorAllocationService.DeleteAllocation({ _id })
             getData()
         }
+
+        Toast({
+            message: "Sucesso ao deletar alocação",
+            color: "success",
+            time: 2000,
+            show: true
+        })
 
     }
 

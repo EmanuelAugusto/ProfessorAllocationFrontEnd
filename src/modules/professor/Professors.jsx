@@ -7,6 +7,7 @@ import * as ProfessorAllocationService from "../../services/ProfessorAllocationS
 import { stateModalFormProfessors, setProfessorsState } from './ProfessorsState/ProfessorsState'
 import FormCreateProfessor from "./components/FormCreateProfessor"
 import { setDepartmentsState } from '../department/departmentState/DepartmentState'
+import Toast from "../../utils/Toast"
 
 export default function () {
     const Professors = useSelector(state => state.professors.professors)
@@ -36,6 +37,13 @@ export default function () {
             await ProfessorAllocationService.DeleteProfessorById({ _id })
             getData()
         }
+
+        Toast({
+            message: "Sucesso ao deletar professor",
+            color: "success",
+            time: 2000,
+            show: true
+        })
 
     }
 

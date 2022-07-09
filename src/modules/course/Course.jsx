@@ -7,6 +7,7 @@ import Dialog from "../../components/Dialog"
 import FormCreateCourse from "./components/FormCreateCourse"
 import { useSelector, useDispatch } from 'react-redux'
 import { stateModalFormCourse, setCoursesState } from './courseState/CourseState'
+import Toast from "../../utils/Toast"
 
 export default function () {
 
@@ -25,6 +26,13 @@ export default function () {
             await ProfessorAllocationService.DeleteCourseById({ _id })
             getData()
         }
+
+        Toast({
+            message: "Sucesso ao deletar curso",
+            color: "success",
+            time: 2000,
+            show: true
+        })
 
     }
 

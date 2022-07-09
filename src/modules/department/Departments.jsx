@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import * as ProfessorAllocationService from "../../services/ProfessorAllocationService"
 import { stateModalFormDepartment, setDepartmentsState } from './departmentState/DepartmentState'
 import FormCreateDepartment from "./components/FormCreateDepartment"
+import Toast from "../../utils/Toast"
 
 export default function () {
     const departments = useSelector(state => state.departments.departments)
@@ -35,6 +36,14 @@ export default function () {
             await ProfessorAllocationService.DeleteDepartamentById({ _id })
             getData()
         }
+
+        Toast({
+            message: "Sucesso ao deletar departamento",
+            color: "success",
+            time: 2000,
+            show: true
+        })
+
 
     }
 

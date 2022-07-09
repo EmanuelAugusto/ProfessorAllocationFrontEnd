@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import * as ProfessorAllocationService from "../../../services/ProfessorAllocationService"
 import { stateModalFormDepartment, setDepartmentsState } from '../departmentState/DepartmentState'
+import Toast from "../../../utils/Toast"
 
 export default function () {
 
@@ -26,6 +27,14 @@ export default function () {
                 name: nameInput.current.value
             })
         }
+
+        Toast({
+            message: "Sucesso ao criar departamento",
+            color: "success",
+            time: 2000,
+            show: true
+        })
+
 
         nameInput.current.value = ""
 
@@ -59,11 +68,11 @@ export default function () {
             </div>
             <form onSubmit={saveData}>
                 <div className="mb-10px">
-                    <Input innerRef={nameInput} 
-                           label="Nome do departamento" 
-                           id="name" 
-                           type="text" 
-                           placeholder="Informe o nome do departamento" />
+                    <Input innerRef={nameInput}
+                        label="Nome do departamento"
+                        id="name"
+                        type="text"
+                        placeholder="Informe o nome do departamento" />
                 </div>
                 <div className="dp-flex jt-end space-around">
                     <Button label="Salvar" type="submit" />

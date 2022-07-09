@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as ProfessorAllocationService from "../../../services/ProfessorAllocationService"
 import { stateModalFormAllocation, setAllocationState } from '../AllocationState/AllocationState'
 import Select from "../../../components/Select"
+import Toast from "../../../utils/Toast"
 
 export default function () {
 
@@ -54,6 +55,12 @@ export default function () {
                 })
             }
 
+            Toast({
+                message: "Sucesso ao criar alocação",
+                color: "success",
+                time: 2000,
+                show: true
+            })
 
             const { data } = await ProfessorAllocationService.GetAllocations()
 

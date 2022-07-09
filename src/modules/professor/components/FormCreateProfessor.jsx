@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as ProfessorAllocationService from "../../../services/ProfessorAllocationService"
 import { stateModalFormProfessors, setProfessorsState } from '../ProfessorsState/ProfessorsState'
 import Select from "../../../components/Select"
+import Toast from "../../../utils/Toast"
 
 export default function () {
 
@@ -37,6 +38,14 @@ export default function () {
         }
 
         nameInput.current.value = ""
+
+        Toast({
+            message: "Sucesso ao criar professor",
+            color: "success",
+            time: 2000,
+            show: true
+        })
+
 
         const { data } = await ProfessorAllocationService.GetProfessors()
 
