@@ -54,9 +54,8 @@ export default function () {
                 })
             }
 
-            nameInput.current.value = ""
 
-            const { data } = await ProfessorAllocationService.GetProfessors()
+            const { data } = await ProfessorAllocationService.GetAllocations()
 
             dispatch(setAllocationState(data))
 
