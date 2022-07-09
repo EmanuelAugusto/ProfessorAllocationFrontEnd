@@ -1,6 +1,6 @@
 export default function ({ title, children, classCustom, slotafter }) {
     return (
-        <details className={`item-color pa-10px border-radius ${classCustom}`}>
+        <details className={`item-color border pa-10px border-radius ${classCustom}`}>
             <summary className="dp-flex space-between al-center">
                 <div>
                     {title}
