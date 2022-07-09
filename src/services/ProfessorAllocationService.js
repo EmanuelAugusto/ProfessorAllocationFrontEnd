@@ -6,10 +6,13 @@ export const GetCourses = async (params) => {
 }
 
 export const GetCourseById = async (params) => {
-    if (!params._id) {
+
+    const { _id } = params
+
+    if (!_id) {
         throw new Error("provide a id")
     }
-    return await ProfessorHttp.get(`courses/${params._id}`)
+    return await ProfessorHttp.get(`courses/${_id}`)
 }
 
 export const SaveCourse = async (body) => {
@@ -22,6 +25,10 @@ export const EditCourse = async (body) => {
 
     const { _id } = body
 
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
     return await ProfessorHttp.put(`courses/${_id}`, {
         ...body
     })
@@ -31,5 +38,57 @@ export const DeleteCourseById = async (body) => {
 
     const { _id } = body
 
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
     return await ProfessorHttp.delete(`courses/${_id}`)
+}
+
+export const GetDepartments = async (params) => {
+    return await ProfessorHttp.get("departaments")
+}
+
+
+export const GetDepartmentsById = async (params) => {
+
+    const { _id } = params
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+    return await ProfessorHttp.get(`departaments/${_id}`)
+}
+
+export const SaveDepartment = async (body) => {
+    return await ProfessorHttp.post("departaments", {
+        ...body
+    })
+}
+
+export const EditDepartment = async (body) => {
+
+    const { _id } = body
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
+    return await ProfessorHttp.put(`departaments/${_id}`, {
+        ...body
+    })
+}
+
+
+export const DeleteDepartamentById = async (body) => {
+
+    const { _id } = body
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
+    return await ProfessorHttp.delete(`departaments/${_id}`, {
+        ...body
+    })
 }

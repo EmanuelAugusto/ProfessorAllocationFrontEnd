@@ -9,6 +9,7 @@ import store from './store/store'
 import { Provider } from 'react-redux'
 import App from "./App"
 import Course from './modules/course/Course';
+import Departments from './modules/department/Departments';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="cursos" element={<Course />} />
             <Route path="professores" element={<>Professores</>} />
             <Route path="alocacoes" element={<>Alocacoes</>} />
-            <Route path="departamentos" element={<>Departamentos</>} />
+            <Route path="departamentos" element={<Departments/>} />
           </Route>
         </Routes>
       </Provider>
