@@ -8,10 +8,10 @@ export default function ({ day, start, end, teacher: { name } }) {
                 Dia: {DaysParse(day)}
             </p>
             <p>
-                Hora de inicio: {HoursParse(start)}
+                Hora de inicio: {start ? HoursParse(start) : ''}
             </p>
             <p>
-                Hora de termino: {HoursParse(end)}
+                Hora de termino: {end ? HoursParse(end) : ''}
             </p>
             <p>
                 Nome do professor: {name}
