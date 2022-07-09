@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export default function ({ state, children, onShow, onClose }) {
+export default function ({ state, children, onShow, onClose, customClass }) {
     const [stateModal, setStateModal] = useState(state)
 
     useEffect(() => {
@@ -17,6 +17,6 @@ export default function ({ state, children, onShow, onClose }) {
     }, [state]);
 
     return (
-        <dialog open={stateModal}>{children}</dialog>
+        <dialog open={stateModal} className={customClass}>{children}</dialog>
     )
 }

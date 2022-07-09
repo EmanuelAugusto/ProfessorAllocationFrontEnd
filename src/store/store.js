@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import CourseState from '../modules/course/courseState/CourseState'
 import DepartmentsState from '../modules/department/departmentState/DepartmentState'
+import ProfessorsState from '../modules/professor/ProfessorsState/ProfessorsState'
 
 export default configureStore({
     reducer: {
         course: CourseState,
-        departments: DepartmentsState
+        departments: DepartmentsState,
+        professors: ProfessorsState
     }
 })

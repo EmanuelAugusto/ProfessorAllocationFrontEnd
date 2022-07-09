@@ -151,3 +151,15 @@ dialog{
   color: white;
   font-weight: bold;
 }
+
+.width-500px{
+  width: 500px;
+}
+
+.width-100cent{
+  width: 100%;
+}
+
+.fl-row{
+ flex-direction: column;
+}

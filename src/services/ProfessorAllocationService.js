@@ -92,3 +92,51 @@ export const DeleteDepartamentById = async (body) => {
         ...body
     })
 }
+
+
+export const GetProfessors = async (params) => {
+    return await ProfessorHttp.get("teachers")
+}
+
+
+export const SaveProfessor = async (body) => {
+    return await ProfessorHttp.post("teachers", {
+        ...body
+    })
+}
+
+export const EditProfessor = async (body) => {
+
+    const { _id } = body
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
+    return await ProfessorHttp.put(`teachers/${_id}`, {
+        ...body
+    })
+}
+
+export const GetProfessorsById = async (params) => {
+
+    const { _id } = params
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+    return await ProfessorHttp.get(`teachers/${_id}`)
+}
+
+export const DeleteProfessorById = async (body) => {
+
+    const { _id } = body
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
+    return await ProfessorHttp.delete(`teachers/${_id}`, {
+        ...body
+    })
+}
