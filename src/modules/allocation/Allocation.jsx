@@ -34,7 +34,7 @@ export default function () {
     const deleteAllocation = async (_id) => {
         const result = window.confirm("Você deseja realmente deletar esta alocação?")
         if (result) {
-            await ProfessorAllocationService.DeleteProfessorById({ _id })
+            await ProfessorAllocationService.DeleteAllocation({ _id })
             getData()
         }
 
@@ -67,7 +67,9 @@ export default function () {
             <div className="pa-10px">
 
                 {allocation.map((al, keyB) => {
-                    return (<CourseAllocationCard key={keyB} {...al}  />)
+                    return (<CourseAllocationCard key={keyB} {...al} slotafter={<Button label="Apagar"
+                        className="bg-red"
+                        onClick={() => deleteAllocation(al.id)} />} />)
                 })}
             </div>
             <Dialog customClass="width-500px"

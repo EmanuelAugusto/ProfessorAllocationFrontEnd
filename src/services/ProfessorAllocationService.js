@@ -150,3 +150,14 @@ export const GetAllocations = async (params) => {
 export const SaveAllocation = async (params) => {
     return await ProfessorHttp.post("allocations", { ...params })
 }
+
+export const DeleteAllocation = async (params) => {
+
+    const { _id } = params
+
+    if (!_id) {
+        throw new Error("provide a id")
+    }
+
+    return await ProfessorHttp.delete(`allocations/${_id}`)
+}
