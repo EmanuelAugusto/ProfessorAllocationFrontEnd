@@ -61,7 +61,7 @@ export default function () {
                     </div>
                 </div>
                 {Professors.map((cs, key) => <Item
-                    title={`${cs.name} - CPF: ${cs.cpf}`}
+                    title={`${cs.name} - CPF: ${cs.cpf} - Departamento: ${cs.department.name}`}
                     key={key}
                     classCustom="mb-05px"
                     slotafter={<> <div className="mb-10px">

@@ -15,7 +15,6 @@ ProfessorHttp.interceptors.request.use(function (config) {
 
     Store.dispatch(setLoadingState(true))
 
-    console.log('REQUEST')
     // Do something before request is sent
     return config;
 }, function (error) {
