@@ -67,7 +67,7 @@ export default function () {
             <div className="pa-10px">
 
                 {allocation.map((al, keyB) => {
-                    return (<CourseAllocationCard key={keyB} {...al} />)
+                    return (<CourseAllocationCard key={keyB} {...al}  />)
                 })}
             </div>
             <Dialog customClass="width-500px"

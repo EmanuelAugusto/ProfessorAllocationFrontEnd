@@ -3,7 +3,7 @@ import HoursParse from "../../../utils/HoursParse"
 
 export default function ({ day, start, end, teacher: { name }, course: { name: nameCourse } }) {
     return (
-        <div className="border pa-10px border-radius  item-color">
+        <div className="border pa-10px border-radius mb-10px item-color">
             <p>
                 Dia: {DaysParse(day)}
             </p>
