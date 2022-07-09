@@ -36,15 +36,16 @@ export default function () {
         const result = window.confirm("Você deseja realmente deletar esta alocação?")
         if (result) {
             await ProfessorAllocationService.DeleteAllocation({ _id })
+            Toast({
+                message: "Sucesso ao deletar alocação",
+                color: "success",
+                time: 2000,
+                show: true
+            })
             getData()
+
         }
 
-        Toast({
-            message: "Sucesso ao deletar alocação",
-            color: "success",
-            time: 2000,
-            show: true
-        })
 
     }
 

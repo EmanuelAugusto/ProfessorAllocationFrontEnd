@@ -35,15 +35,15 @@ export default function () {
         const result = window.confirm("Você deseja realmente deletar este professor?")
         if (result) {
             await ProfessorAllocationService.DeleteProfessorById({ _id })
+            Toast({
+                message: "Sucesso ao deletar professor",
+                color: "success",
+                time: 2000,
+                show: true
+            })
             getData()
         }
 
-        Toast({
-            message: "Sucesso ao deletar professor",
-            color: "success",
-            time: 2000,
-            show: true
-        })
 
     }
 

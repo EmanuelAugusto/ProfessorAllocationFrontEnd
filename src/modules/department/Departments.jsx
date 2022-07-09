@@ -34,15 +34,15 @@ export default function () {
         const result = window.confirm("Você deseja realmente deletar este departamento?")
         if (result) {
             await ProfessorAllocationService.DeleteDepartamentById({ _id })
+            Toast({
+                message: "Sucesso ao deletar departamento",
+                color: "success",
+                time: 2000,
+                show: true
+            })
             getData()
         }
 
-        Toast({
-            message: "Sucesso ao deletar departamento",
-            color: "success",
-            time: 2000,
-            show: true
-        })
 
 
     }
